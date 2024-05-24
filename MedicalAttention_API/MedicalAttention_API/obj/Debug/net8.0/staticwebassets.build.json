@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "92jylQ2daELAruLeJuPy61HDZEcEJ7JsX6phMr9rC5U=",
+  "Source": "MedicalAttention_API",
+  "BasePath": "_content/MedicalAttention_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,37 @@
+name: dockercompose18163259524888027215
+services:
+  medicalattention_api:
+    build:
+      context: C:\Users\Joel_Becerra\source\repos\MedicalAttention_API
+      dockerfile: MedicalAttention_API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ConnectionStrings__DefaultConnection: Host=localhost;Port=5432;Database=Medical_DB;Username=postgres;Password=newPostgresql;Pooling=false;
+    image: medicalattentionapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Joel_Becerra\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Joel_Becerra\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose18163259524888027215_default
